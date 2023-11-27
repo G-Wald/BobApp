@@ -46,6 +46,6 @@ jobs:
     
     - name: Build and publish Docker image
       run: |
-        docker build -t your-image-name:your-tag -f path/to/your/Dockerfile .
+        docker build -t your-image-name:your-tag -f front/Dockerfile .
         docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
         docker push your-image-name:your-tag
