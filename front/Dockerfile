@@ -2,10 +2,10 @@ FROM node:latest as build
 
 WORKDIR /usr/local/app/
 #front/dist/bobapp
-COPY ./package.json ./
+COPY ./package.json .
 
 RUN npm install
-COPY . .
+COPY . ./
 
 
 
