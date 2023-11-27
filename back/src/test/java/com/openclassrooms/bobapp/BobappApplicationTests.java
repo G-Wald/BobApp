@@ -10,4 +10,9 @@ class BobappApplicationTests {
 	void contextLoads() {
 	}
 
+	@Test
+	void testquivarater(){
+		assertEquals(1, 2));
+	}
+
 }
