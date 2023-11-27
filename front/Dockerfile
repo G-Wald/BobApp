@@ -1,6 +1,6 @@
 FROM node:latest as build
 
-WORKDIR /usr/local/app
+WORKDIR /usr/local/app/front
 COPY ./ /usr/local/app/
 
 RUN yarn
