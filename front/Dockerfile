@@ -1,7 +1,7 @@
 FROM node:latest as build
 
 WORKDIR /usr/local/app/front/dist/bobapp
-COPY ./ /usr/local/app/
+COPY ./ /usr/local/app/front/dist/bobapp
 
 RUN yarn
 RUN npm run build
