@@ -35,3 +35,17 @@ jobs:
       working-directory: 'front'
     - run: npm run testCI
       working-directory: 'front'
+  
+  build-docker-image:
+    needs: build
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    
+    - name: Build and publish Docker image
+      run: |
+        docker build -t your-image-name:your-tag -f path/to/your/Dockerfile .
+        docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+        docker push your-image-name:your-tag
