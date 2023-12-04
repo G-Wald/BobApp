@@ -2,11 +2,15 @@ FROM node:latest as build
 
 WORKDIR /usr/local/app/
 #front/dist/bobapp
+RUN echo "***********************************************************************************"
+RUN echo "hello there"
+RUN ls
+RUN echo "***********************************************************************************"
+
 COPY .front/package.json .
 
 RUN npm install
 COPY . ./
-
 
 
 #COPY ./ /usr/local/app/front/dist/bobapp
