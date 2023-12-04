@@ -6,10 +6,16 @@ WORKDIR /usr/local/app/front
 
 RUN npm run build
 
+RUN  ls
+RUN  cs "/usr/local/app" && ls
+
 FROM nginx:latest as production
 
+RUN  ls
+RUN  cs "/usr/local/app" && ls
 
-#COPY /usr/local/app/front/nginx.conf /etc/nginx/conf.d/default.conf
-#COPY --from=build /usr/local/app/dist/bobapp /usr/share/nginx/html
+
+COPY /usr/local/app/nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=build /usr/local/app/dist/bobapp /usr/share/nginx/html
 
 EXPOSE 80
