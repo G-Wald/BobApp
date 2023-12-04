@@ -5,6 +5,7 @@ COPY . /usr/local/app
 
 WORKDIR /usr/local/app
 
+RUN cd "/usr/local/app" && ls
 RUN npm run build
 
 FROM nginx:latest as production
