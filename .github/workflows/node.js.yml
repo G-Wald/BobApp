@@ -29,7 +29,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
         cache-dependency-path: 'front/package-lock.json'
-    - run: nnpm ci esbuild-android-64 --save-optional
+    - run: npm ci esbuild-android-64 --save-optional
       working-directory: 'front'
     - run: npm run build --if-present
       working-directory: 'front'
