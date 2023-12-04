@@ -5,7 +5,7 @@ FROM node:latest as build
 COPY . /usr/local/app/bobapp/front
 COPY . /usr/local/app/bobapp
 
-
+RUN npm cache clean --force
 RUN npm install
 RUN npm run build
 
