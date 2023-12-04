@@ -4,8 +4,6 @@ COPY . /usr/local/app
 
 WORKDIR /usr/local/app
 
-
-RUN cd "bobapp"
 RUN npm install
 RUN npm run build
  
