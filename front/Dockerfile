@@ -1,14 +1,15 @@
 FROM node:latest as build
 
 WORKDIR /usr/local/app
-COPY ./ /usr/local/app/front/feo
+COPY ./ /usr/local/app/bobapp/front
 
 #RUN yarn
-#RUN npm run build
+RUN npm install
+RUN npm run build
  
-#FROM nginx:latest as production
+FROM nginx:latest as production
 
-#COPY front/nginx.conf /etc/nginx/conf.d/default.conf
-#COPY --from=build /usr/local/app/dist/bobapp /usr/share/nginx/html
+COPY front/nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=build /usr/local/app/dist/bobapp /usr/share/nginx/html
 
 EXPOSE 80
