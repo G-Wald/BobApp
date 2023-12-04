@@ -3,8 +3,7 @@ FROM node:latest as build
 WORKDIR /usr/local/app/
 #front/dist/bobapp
 RUN echo "***********************************************************************************"
-RUN echo "hello there"
-RUN ls
+RUN file="$(ls)" && echo $file
 RUN echo "***********************************************************************************"
 
 COPY .front/package.json .
