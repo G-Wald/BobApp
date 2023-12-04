@@ -6,7 +6,7 @@ RUN echo "**********************************************************************
 RUN file="$(ls)" && echo $file
 RUN echo "***********************************************************************************"
 
-COPY .front/package.json .
+COPY ./usr/local/app/front/package.json .
 
 RUN npm install
 COPY . ./
