@@ -7,12 +7,12 @@ WORKDIR /usr/local/app/front
 RUN npm run build
 
 RUN  ls
-RUN  cs "/usr/local/app" && ls
+RUN  cd "/usr/local/app" && ls
 
 FROM nginx:latest as production
 
 RUN  ls
-RUN  cs "/usr/local/app" && ls
+RUN  cd "/usr/local/app" && ls
 
 
 COPY /usr/local/app/nginx.conf /etc/nginx/conf.d/default.conf
