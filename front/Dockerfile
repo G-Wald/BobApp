@@ -2,6 +2,8 @@ FROM node:latest as build
 
 COPY . /usr/local/app
 
+RUN cd bobapp
+
 WORKDIR /usr/local/app
 
 RUN npm install
