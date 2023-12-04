@@ -2,7 +2,7 @@ FROM node:latest as build
 
 WORKDIR /usr/local/app/
 #front/dist/bobapp
-COPY ./package.json .
+COPY .front/package.json .
 
 RUN npm install
 COPY . ./
