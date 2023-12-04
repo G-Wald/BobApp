@@ -2,7 +2,8 @@ FROM node:latest as build
 
 #WORKDIR /usr/local/app
 
-COPY . /usr/local/app
+COPY . /usr/local/app/bobapp/front
+COPY . /usr/local/app/bobapp
 
 
 RUN npm install
