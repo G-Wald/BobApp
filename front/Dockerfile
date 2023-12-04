@@ -9,6 +9,9 @@ COPY . /usr/local/bobapp/front
 #RUN rm package-lock.json
 #RUN npm cache clear --force
 #RUN npm i --prefer-dedupe
+RUN ls
+RUN echo "************"
+RUN npm install
 RUN npm run build
 
 FROM nginx:latest as production
