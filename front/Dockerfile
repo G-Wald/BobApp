@@ -6,9 +6,9 @@ COPY . /usr/local/bobapp/front
 #COPY . /usr/local/app/bobapp
 
 
-RUN rm package-lock.json
-RUN npm cache clear --force
-RUN npm i --prefer-dedupe
+#RUN rm package-lock.json
+#RUN npm cache clear --force
+#RUN npm i --prefer-dedupe
 RUN npm run build
 
 FROM nginx:latest as production
