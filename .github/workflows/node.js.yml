@@ -39,7 +39,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Run Karma Tests with Coverage
-    - run: npm run test -- --code-coverage
+      run: npm run testCI
       working-directory: 'front'
 
     - name: Publish Coverage Report
