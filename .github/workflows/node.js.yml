@@ -45,13 +45,18 @@ jobs:
     
     - name: Build  Docker image
       run: docker build -t waldh/bobapp-projet:bobapp-front -f front/Dockerfile .
+
+    - name: Build  Docker image
+      run: |
+        echo ${{ secrets.DOCKER_TOKEN2 }}
+        echo ${{ secrets.DOCKER_TOKEN2 }}
       
     - name: Login to GitHub Container Registry
       uses: docker/login-action@v3
       with:
         registry: ghcr.io
         username: ${{ github.actor }}
-        password: ${{ secrets.DOCKER_TOKEN }}
+        password: ${{ secrets.DOCKER_TOKEN2 }}
       
     - name: Publish Docker image
       run: docker push waldh/bobapp-projet:bobapp-front
