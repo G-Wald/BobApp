@@ -38,14 +38,6 @@ jobs:
       run: npm run test -- --code-coverage --no-watch --source-map=false --browsers=ChromeHeadless
       working-directory: 'front'
 
-    - name: Publish Coverage Report
-      uses: actions/upload-artifact@v2
-      with:
-        working-directory: 'front'
-        name: coverage-report
-        path: ./coverage/bobapp
-      #inserer coverage sonarQube
-
   sonarqube:
       needs: build-test
       runs-on: ubuntu-latest
