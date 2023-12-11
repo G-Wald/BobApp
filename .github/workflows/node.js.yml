@@ -52,12 +52,6 @@ jobs:
         registry: ghcr.io
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
-        
-    - name: droit
-      run: docker info
       
-    - name: Pull Docker image
-      run: docker pull waldh/bobapp-projet:latest
-
     - name: Publish Docker image
       run: docker push waldh/bobapp-projet:bobapp-front
