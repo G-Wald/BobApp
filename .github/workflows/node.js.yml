@@ -34,10 +34,6 @@ jobs:
     - run: npm run testCI
       working-directory: 'front'
 
-  coverage:
-    needs: build-test
-    runs-on: ubuntu-latest
-    steps:
     - name: Run Karma Tests with Coverage
       run: npm run testCI
       working-directory: 'front'
