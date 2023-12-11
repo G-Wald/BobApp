@@ -33,6 +33,17 @@ jobs:
       working-directory: 'front'
     - run: npm run testCI
       working-directory: 'front'
+
+    - name: Run Karma Tests with Coverage
+      run: npm run test -- --coverage
+      working-directory: 'front'
+
+    - name: Publish Coverage Report
+      uses: actions/upload-artifact@v2
+      with:
+        working-directory: 'front'
+        name: coverage-report
+        path: ./coverage/bobapp
       #inserer coverage sonarQube
 
   docker-image-publish:
