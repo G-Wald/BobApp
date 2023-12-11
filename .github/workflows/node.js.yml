@@ -52,4 +52,4 @@ jobs:
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
     - name: Publish Docker image
-      run: docker push bobapp-front
+      run: docker push waldh/bobapp-projet:bobapp-front
