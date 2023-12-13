@@ -62,8 +62,8 @@ jobs:
             -Dsonar.projectKey=G-Wald_BobApp
             -Dsonar.projectName=BobApp
             -Dsonar.organization=g-wald
-            -Dsonar.sources=/front
-            -Dsonar.tests=/front
+            -Dsonar.sources=../../front
+            -Dsonar.tests=../../front
             # Unique key of your project. You can find it in SonarQube > [my project] > Project Information (top-right menu)
             # mandatory
             #-Dsonar.projectBaseDir=G-Wald
