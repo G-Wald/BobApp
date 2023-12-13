@@ -57,7 +57,7 @@ jobs:
             -Dsonar.projectKey=G-Wald_BobApp
             -Dsonar.projectName=BobApp
             -Dsonar.organization=g-wald
-            -Dsonar.sources=.
+            -Dsonar.sources=../../front
             #-Dsonar.projectBaseDir=G-Wald
             # Comma-separated paths to directories containing main source files.
             # When you need the analysis to take place in a directory other than the one from which it was launched
