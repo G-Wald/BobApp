@@ -56,14 +56,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}   # Generate a token on SonarQube, add it to the secrets of this repo with the name SONAR_TOKEN (Settings > Secrets > Actions > add new repository secret)
-        with:
-          # Additional arguments for the sonarcloud scanner
-          args:
-            -Dsonar.projectKey=G-Wald_BobApp
-            -Dsonar.projectName=BobApp
-            -Dsonar.organization=g-wald
-            -Dsonar.sources=/../../front
-            -Dsonar.tests=/../../front
+       
             # Unique key of your project. You can find it in SonarQube > [my project] > Project Information (top-right menu)
             # mandatory
             #-Dsonar.projectBaseDir=G-Wald
