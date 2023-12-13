@@ -38,6 +38,19 @@ jobs:
       run: npm run test -- --code-coverage --no-watch --source-map=false --browsers=ChromeHeadless
       working-directory: 'front'
 
+    - name: Analyze with SonarQube
+    
+      uses: SonarSource/sonarcloud-github-action@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      with:
+        # Additional arguments for the sonarcloud scanner
+        args:
+          -Dsonar.projectKey=G-Wald_BobApp
+          -Dsonar.projectName=BobApp
+          -Dsonar.organization=g-wald
+
   sonarqube:
       needs: build-test
       runs-on: ubuntu-latest
@@ -56,7 +69,13 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}   # Generate a token on SonarQube, add it to the secrets of this repo with the name SONAR_TOKEN (Settings > Secrets > Actions > add new repository secret)
-       
+        with:
+          # Additional arguments for the sonarcloud scanner
+          args:
+            -Dsonar.projectKey=G-Wald_BobApp
+            -Dsonar.projectName=BobApp
+            -Dsonar.organization=g-wald
+
             # Unique key of your project. You can find it in SonarQube > [my project] > Project Information (top-right menu)
             # mandatory
             #-Dsonar.projectBaseDir=G-Wald
