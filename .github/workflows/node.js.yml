@@ -44,7 +44,7 @@ jobs:
             SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }} 
       run: |
         npm install -g sonarqube-scanner
-        sonar-scanner -Dsonar.projectKey=G-Wald_BobApp_front -Dsonar.sources=src -Dsonar.host.url=https://sonarcloud.io -Dsonar.exclusions=**/node_modules/** -Dsonar.tests=src -Dsonar.test.inclusions=**/*.spec.ts -Dsonar.typescript.lcov.reportPaths=coverage/lcov.info 
+        sonar-scanner -Dsonar.projectKey=G-Wald_BobApp_front -Dsonar.sources=src -Dsonar.host.url=https://sonarcloud.io -Dsonar.exclusions=**/node_modules/** -Dsonar.tests=src -Dsonar.test.inclusions=**/*.spec.ts -Dsonar.typescript.lcov.reportPaths=coverage/bobapp/lcov.info 
 
       
   docker-image-publish:
