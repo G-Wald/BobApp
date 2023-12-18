@@ -8,7 +8,7 @@ COPY ./front /usr/local/app
 RUN npm install
 RUN npm run build
 
-# Phase de production
+# Phase de  production
 FROM nginx:latest as production
 
 COPY ./front/nginx.conf /etc/nginx/conf.d/default.conf
