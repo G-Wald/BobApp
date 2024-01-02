@@ -37,6 +37,12 @@ jobs:
     - name: Run Karma Tests with Coverage
       run: npm run test -- --code-coverage --no-watch --source-map=false --browsers=ChromeHeadless
       working-directory: 'front'
+      
+    - name: Archive Code Coverage Report
+      uses: actions/upload-artifact@v2
+      with:
+        name: code-coverage-report
+        path: front/coverage
 
     - name: Run SonarQube analysis
       env:
