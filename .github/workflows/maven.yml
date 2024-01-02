@@ -49,6 +49,20 @@ jobs:
             SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=G-Wald_BobApp_back
           working-directory: back
+
+        - name: Check SonarCloud Quality Gate
+          env:
+            SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          run: |
+            status=$(curl -s -u "${{ secrets.SONAR_TOKEN }}:" -X GET "https://sonarcloud.io/api/qualitygates/project_status?projectKey=G-Wald_BobApp_back" | jq -r '.projectStatus.status')
+            
+            if [ "$status" != "OK" ]; then
+              echo "Quality Gate check failed."
+              exit 1
+            else
+              echo "Quality Gate check passed."
+            fi
+
           
         - name: Build with Maven
           run: mvn -B package --file pom.xml
